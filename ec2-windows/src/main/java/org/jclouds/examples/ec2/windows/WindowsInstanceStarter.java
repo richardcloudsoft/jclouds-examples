@@ -126,6 +126,30 @@ public class WindowsInstanceStarter {
       logger.info("Login name: %s", credentials.getUser());
       logger.info("Password:   %s", credentials.getPassword());
 
+      // At this point, if you were using Overthere and a WinRM-enabled AMI with the
+      // appropriate firewall/security group rules, you could do something like this:
+//      ConnectionOptions options = new ConnectionOptions();
+//      options.set(ADDRESS, publicIp);
+//      options.set(USERNAME, credentials.getUser());
+//      options.set(PASSWORD, credentials.getPassword());
+//      options.set(OPERATING_SYSTEM, WINDOWS);
+//      options.set(CONNECTION_TYPE, CifsConnectionType.WINRM_HTTPS);
+//      OverthereConnection connection = Overthere.getConnection("cifs", options);
+//      String output = null, error = null;
+//      boolean exception = false;
+//      try {
+//         CapturingOverthereProcessOutputHandler handler = capturingHandler();
+//         connection.execute(handler, CmdLine.build("date", "/t"));
+//         output = handler.getOutput();
+//         error = handler.getError();
+//      } catch (Exception e) {
+//         exception = true;
+//      } finally {
+//         connection.close();
+//      }
+//      if (!Strings.isNullOrEmpty(output)) logger.info("Output: %s", output);
+//      if (!Strings.isNullOrEmpty(error)) logger.warn("Error: %s", error);
+
       // Wait for Enter on the console
       logger.info("Hit Enter to shut down the node.");
       InputStreamReader converter = new InputStreamReader(System.in);
